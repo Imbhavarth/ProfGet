@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+  <title>SignUp</title>
+  <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="icon" href="images/logo/logo.png"/>
+  <link href="{% static 'css/Signup_Job_Seeker.css' %}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <div class="container">
+        <h1 class="h3 mb-3 font">Sign Up</h1>
+        <p>Already Have an Account? <a href="{% static 'Login_app:login' %}"> Log In here</a></p>
+          <form method="post" enctype="multipart/form-data">
+    {{ user_form.as_p }}
+    {{ user_info_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Create my account"></p>
+        <!-- <div class="row">
+          <div class="form-floating col-6">
+            <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+              autocomplete="off">
+            <label for="floatingInput">First Name</label>
+          </div>
+
+          <div class="form-floating col-6">
+            <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+              autocomplete="off">
+            <label for="floatingInput">Last Name</label>
+          </div>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Create User Name</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="email" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="off">
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="off">
+          <label for="floatingPassword">Confirm Password</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">LinkedIn ID</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="file" class="form-control mb-2 " id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Upload Resume</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Country</label>
+        </div> -->
+
+        <!-- <div class="form-floating">
+          <input type="date" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Date Of Birth</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Qualification</label>
+        </div>
+
+        <div class="form-floating">
+          <textarea type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off"></textarea>
+          <label for="floatingInput">Skills</label>
+        </div>
+
+        <div class="form-floating">
+          <textarea type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off"></textarea>
+          <label for="floatingInput">Total Experience</label>
+        </div> -->
+        
+        <!-- <button class="w-100 btn  mt-3" type="submit" value="Create my account"><a href="{%url 'Login_app:login'%}" >Sign Up</a></button> -->
+      </form>
+    </div>
+  </main> 
+  <!-- <h1>Create an account</h1>
+  <p>Please, sign up using the following form:</p> -->
+</body>
