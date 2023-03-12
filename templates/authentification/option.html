@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <title>Role</title>
+  <link rel="icon" href="static/images/logo/logo.png"/>
+  <link href="{%static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/login.css' %}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <div class="container">
+      <form>
+        <button class="w-100 btn btn-lg btn-primary" type="submit"><a href="{%url 'Login_app:register'%}" >Sign Up as Job Seeker</a></button>
+        <button class="w-100 btn mt-3 btn-lg btn-secondary" type="submit"><a href="{%url 'Login_app:jobproviderregister'%}">Sign Up as Job Provider</a></button>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
