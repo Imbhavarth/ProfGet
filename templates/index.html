@@ -1,0 +1,264 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
+<head>
+
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> YELLOW FAFDA </title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="shortcut icon" type="image" href="static/images/logo/logo.png">
+</head>
+
+<body>
+{% block content %}
+<!-- Header Section -->
+<section class="tophead" role="tophead"> 
+  <!-- Navigation Section -->
+  <header id="header">
+    <div class="header-content clearfix"> <a class="logo" href="static/images/logo/Logo-main.png">Freelancing by  <img src="{% static 'images/logo/Logo-main.png' %}"></a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="#header-slider"><b>Home</b></a></li>
+          <li><a href="#services"><b>Our Services</b></a></li>
+          <li><a href="#portfolio"><b>Our Portfolio</b></a></li>
+          <li><a href="#testimonials"><b>Testimonials</b></a></li>
+          <li><a href="#contact"><b>Contact</b></a></li>
+          <li><a href="{% url 'Login_app:login' %}"><b>Log In/Sign Up</b></a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!-- Navigation Section --> 
+</section>
+<!-- Header Section --> 
+<!-- Slider Section -->
+<section id="header-slider" class="section">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active"> <img src="{% static 'images/slider/f1.jpg' %}" alt="Chania">
+        <div class="carousel-caption">
+          <h3>We're Yellow Fafda Freelancing Platform</h3>
+          <p>We Build Strong Platform which impact your customers</p>
+        </div>
+      </div>
+      <div class="item"> <img src="{% static 'images/slider/f2.jpg' %}" alt="Chania">
+        <div class="carousel-caption">
+          <h3>We're India based Freelancing organization</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- Controls --> 
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span></a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span></a></div>
+</section>
+<!-- Slider Section --> 
+<!-- Service Section -->
+<section id="services" class="section services">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="services-content">
+          <h4>We're India based Freelancing Platform</h4>
+          <p>Easy to sign up and navigate to get the best out of the site. The colourful site is engaging and the instructions are very clear. It is a nice touch that there is a link which takes you straight to your emails to complete the verification process. Overall very impressed.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="services-content">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#">Post a Job</a></li>
+            <li><a href="#">Choose Freelancer</a></li>
+            <li><a href="#">Pay safely</a></li>
+            <li><a href="#">Ready to help</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="services-content">
+          <h5>Media Marketing</h5>
+          <ul>
+            <li><a href="#">Marketing Research</a></li>
+            <li><a href="#">Social Marketing</a></li>
+            <li><a href="#">Mobile marketing</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Service Section --> 
+
+<!-- portfolio grid section -->
+<section id="portfolio" class="section portfolio">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 portfolio-item"> <a href="work-details.html" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>Browse Portfolio</h3>
+            <h4>Find professionals you can trust by browsing their samples of previous work and reading their profile reviews.</h4>
+          </div>
+        </div>
+        <img src="{% static 'images/portfolio/work-1.jpg' %}" class="img-responsive" alt=""> </a> </div>
+      <div class="col-sm-6 portfolio-item"> <a href="work-details.html" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>Fast Bids</h3>
+            <h4>Receive obligation free quotes from our talented freelancers fast.</h4>
+          </div>
+        </div>
+        <img src="{% static 'images/portfolio/work-2.jpg' %}" class="img-responsive" alt=""> </a> </div>
+      <div class="col-sm-6 portfolio-item"> <a href="work-details.html" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>Quality Work</h3>
+            <h4>yellowfafda.com has by far the largest pool of quality freelancers globally.</h4>
+          </div>
+        </div>
+        <img src="{% static 'images/portfolio/work-3.jpg' %}" class="img-responsive" alt=""> </a> </div>
+      <div class="col-sm-6 portfolio-item"> <a href="work-details.html" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>Track Progress</h3>
+            <h4>Keep up-to-date and on-the-go with our time tracker. Always know what freelancers are up to.</h4>
+          </div>
+        </div>
+        <img src="{% static 'images/portfolio/work-4.jpg' %}" class="img-responsive" alt=""> </a> </div>
+      <!-- <div class="col-sm-6 portfolio-item"> <a href="work-details.html" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>czarna kawka</h3>
+            <h4>Branding</h4>
+          </div>
+        </div>
+        <img src="images/portfolio/work-5.jpg" class="img-responsive" alt=""> </a> </div>
+      <div class="col-sm-6 portfolio-item"> <a href="work-details.html" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>czarna kawka</h3>
+            <h4>Branding</h4>
+          </div>
+        </div>
+        <img src="images/portfolio/work-6.jpg" class="img-responsive" alt=""> </a> </div> -->
+    </div>
+  </div>
+</section>
+<!-- portfolio grid section --> 
+
+<!-- Testimonials section -->
+<section id="testimonials" class="section testimonials no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h1>"Choose a job you love, and you will never have to work a day in your life"</h1>
+                <p>Kathan Prajapati, Backend Developer</p>
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h1>"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle"</h1>
+                <p>Twinkal Christian, Frontend Developer</p>
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h1>"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful"</h1>
+                <p>Bhavarth, Database</p>
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h1>"Don't watch the clock; do what it does. Keep going"</h1>
+                <p>Miraj Patni, Database</p>
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h1>"Start where you are. Use what you have. Do what you can"</h1>
+                <p>Prachi, Frontend</p>
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h1>"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do"</h1>
+                <p>Jay Prajapati, Database</p>
+              </blockquote>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials section --> 
+
+<!-- footer section -->
+<footer id="contact" class="footer">
+  <div class="container-fluid">
+    <div class="col-md-2 left">
+      <h4>Office Location</h4>
+      <p> Concordia University, Montreal </p>
+    </div>
+    <div class="col-md-2 left">
+      <h4>Contact</h4>
+      <p> Call: 438.467.5028 <br>
+        Email : <a href="mailto:hello@agency.com"> kvp2001.it@gmail.com </a></p>
+    </div>
+    <div class="col-md-2 left">
+      <h4>Social presense</h4>
+      <ul class="footer-share">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class="col-md-6 right">
+      <p>© 2023 All rights reserved. All Rights Reserved<br>
+        Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.pearlspinetech.com/">Yellow Fafda</a></p>
+    </div>
+  </div>
+</footer>
+<!-- footer section --> 
+
+<!-- JS FILES --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="{%static 'js/bootstrap.min.js' %}"></script> 
+<script src="{%static 'js/jquery.flexslider-min.js' %}"></script> 
+<script src="{%static 'js/retina.min.js' %}"></script> 
+<script src="{%static 'js/modernizr.js' %}"></script> 
+<script src="{%static 'js/main.js' %}"></script>
+{% endblock %}
+</body>
+</html>
