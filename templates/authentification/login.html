@@ -3,18 +3,32 @@
 
 <head>
   {% load static %} 
+  {% load i18n %}
+  {% load account socialaccount %}
+  {% load crispy_forms_filters %}
+  {% get_providers as socialaccount_providers %}
   <title>LogIn</title>
   <link rel="icon" href="static/images/portfolio/work-1.jpg"/>
   <link rel="stylesheet" href="{%static 'assets/dist/css/bootstrap.min.css'%}">
   <link rel="stylesheet" href="{%static 'css/login.css'%}">
 </head>
 <body class="text-center">
-  
- 
+
+
   <main class="form-signin w-100 m-auto">
     <div class="container">
       <form action="{%url 'Login_app:user_loged'%}" method="post">
       <h1 class="h3 mb-3 font">Log In</h1>
+
+      <div class="socialaccount_ballot">
+
+        <div class="socialaccount_providers">
+          {% include "provider/provider.html" with process="login" %}
+        </div>
+    
+        <div class="login-or border-top border-bottom my-3">{% trans 'OR' %}</div>
+    
+      </div>
 
       
         
@@ -26,7 +40,7 @@
           <input type="password" class="form-control" name="password" placeholder="Password" >
           <label for="password">Password</label>
         </div>
-        
+            
       <!-- <p><input type="submit" name="Submit" value="LogIn"></p> -->
 
         <div class="checkbox mb-3">
