@@ -11,6 +11,7 @@
   <link rel="icon" href="static/images/portfolio/work-1.jpg"/>
   <link rel="stylesheet" href="{%static 'assets/dist/css/bootstrap.min.css'%}">
   <link rel="stylesheet" href="{%static 'css/login.css'%}">
+  <link rel="shortcut icon" type="image" href="static/images/logo/logo.png">
 </head>
 <body class="text-center">
 
@@ -49,7 +50,7 @@
           </label>
         </div>
         {% csrf_token %}
-        <button class="w-100 btn btn-lg btn-primary" type="submit" value="LogIn">Sign In</a></button> 
+        <button class="w-100 btn btn-lg btn-primary" value="LogIn">Sign In</button><hr>
       </form> 
       <button class="w-100 btn mt-3 btn-lg btn-secondary" type="submit"><a href="{% url 'Login_app:option' %}">Sign Up</a></button>
     </div>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% load static %} 
+  <title>Freelancing | By Yellow Fafda</title>
+  <link rel="stylesheet" href="{%static 'css/style2.css' %}" >
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  <link rel="shortcut icon" type="image" href="static/images/logo/logo.png"/>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">PROF-GET | Freelancing Platform</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <h4>&nbsp;&nbsp;{{ user.username }}&nbsp;&nbsp;</h4>
+      <div class="account">
+        <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol-thumbnail.png" alt="">
+        <h4><a href="{% url 'Login_app:logout'%}">Logout</a></h4>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="#" class="active">Dashboard</a>
+        <a href="{% url 'Login_app:dashboard_provider'%}">Switch as Job Provider</a>
+        <a href="{% url 'Login_app:edit_profile'%}">Edit Profile</a>
+        <a href="#">All Job Posts</a>
+        <a href="#">Application</a>
+        <a href="{% url 'Login_app:profile_seeker'%}">My Account</a>
+        <a href="#">Transaction History</a>
+        <a href="#">Messages</a>
+        <a href="{% url 'Login_app:invite'%}">Invite a Friend</a>
+
+        <div class="links">
+          <span>Quick Link</span>
+          <a href="https://www.paypal.com/signin">Paypal</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <h2>Dashboard</h2>
+      <div class="promo_card">
+        <h1>Welcome to Prof-Get Freelancing</h1>
+        <span>"Technology is best when it brings people together"</span>
+        <button>Learn More</button>
+      </div>
+
+      <div class="history_lists">
+        <div class="list1">
+          <div class="row">
+            <h4>Ongoing Task</h4>
+            <a href="#">See all</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Due Dates</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Ammount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2, Aug, 2023</td>
+                <td>Iron Man</td>
+                <td>Backend</td>
+                <td>$2000.00</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>29, July, 2023</td>
+                <td>Thor</td>
+                <td>Frontend</td>
+                <td>$5,000.00</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>15, July, 2023</td>
+                <td>Hulk</td>
+                <td>Backend</td>
+                <td>$3000.00</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>5, July, 2023</td>
+                <td>Spider Man</td>
+                <td>Backend</td>
+                <td>$7000.00</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>29, June, 2023</td>
+                <td>Dr. Strange</td>
+                <td>Framework</td>
+                <td>$4000.00</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>28, June, 2023</td>
+                <td>Captain America</td>
+                <td>Frontend</td>
+                <td>$2000.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="list2">
+          <div class="row">
+            <h4>Completed Task</h4>
+            <a href="#">Upload</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Bid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>ChatBot</td>
+                <td>AI/ML</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Ticket Booking</td>
+                <td>JAVA</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Licence Booking</td>
+                <td>PHP</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Weather Forecasting</td>
+                <td>AI/ML/NLP</td>
+                <td>22</td>
+              </tr>  
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <h4>Account Balance</h4>
+      
+      <div class="balance">
+        <i class="fas fa-dollar icon"></i>
+        <div class="info">
+          <h5>Dollar</h5>
+          <span><i class="fas fa-dollar"></i>25,000.00</span>
+        </div>
+      </div>
+      
+      <div class="balance">
+        <i class="fa-solid fa-rupee-sign icon"></i>
+        <div class="info">
+          <h5>PKR</h5>
+          <span><i class="fa-solid fa-rupee-sign"></i>300,000.00</span>
+        </div>
+      </div>
+
+      <div class="balance">
+        <i class="fas fa-euro icon"></i>
+        <div class="info">
+          <h5>Euro</h5>
+          <span><i class="fas fa-euro"></i>25,000.00</span>
+        </div>
+      </div>
+
+      <div class="balance">
+        <i class="fa-solid fa-indian-rupee-sign icon"></i>
+        <div class="info">
+          <h5>INR</h5>
+          <span><i class="fa-solid fa-indian-rupee-sign"></i>220,000.00</span>
+        </div>
+      </div>
+
+      <div class="balance">
+        <i class="fa-solid fa-sterling-sign icon"></i>
+        <div class="info">
+          <h5>Pound</h5>
+          <span><i class="fa-solid fa-sterling-sign"></i>30,000.00</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

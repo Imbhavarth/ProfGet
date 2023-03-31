@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <title>Post a New Project</title>
+  <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="icon" href="images/logo/logo.png"/>
+  <link href="{% static 'css/Signup_Job_Seeker.css' %}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <div class="container">
+      <form method="post">
+        <h1 class="h3 mb-3 font">Post a New Project</h1>
+        {{form.as_p}}
+
+        <!-- <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Project Title" autocomplete="off">
+          <label for="floatingPassword">Project Title</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Price" autocomplete="off">
+          <label for="floatingPassword">Project Price</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="file" class="form-control mb-2 " id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Project File</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="date" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off">
+          <label for="floatingInput">Due Date</label>
+        </div>
+
+        <div class="form-floating">
+          <textarea type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
+            autocomplete="off"></textarea>
+          <label for="floatingInput">Project Description</label>
+        </div> -->
+        {% csrf_token %}
+        <button onclick="myFunction()" class="w-100 btn  mt-3" type="submit">Post Project</a></button>
+        <button class="w-100 btn  mt-3" type="submit"><a href="{% url 'Login_app:dashboard_provider' %}" >Cancel</a></button>
+      </form>
+    </div>
+  </main>
+
+<script>
+    function myFunction() {
+        alert("Your Project is Posted Now | Thank You");
+    }
+</script>
+</body>
+
+</html>

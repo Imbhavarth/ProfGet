@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  {% load static %} 
+  <title>Profile</title>
+  <link rel="stylesheet" href="{% static 'css/style3.css' %}" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  <link rel="shortcut icon" type="image" href="static/images/logo/logo.png" >
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">PROF-GET | Freelancing Platform</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <h4>&nbsp;&nbsp;{{ user.username }}&nbsp;&nbsp;</h4>
+      <div class="account">
+        <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol-thumbnail.png" alt="">
+        <h4><a href="{% url 'Login_app:logout'%}">Logout</a></h4>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="{% url 'Login_app:dashboard_seeker'%}" class="">Dashboard</a>
+        <a href="{% url 'Login_app:edit_profile'%}">Edit Profile</a>
+        <a href="#">All Job Posts</a>
+        <a href="#">Application</a>
+        <a href="{% url 'Login_app:profile_seeker'%}">My Account</a>
+        <a href="#">Transaction History</a>
+        <a href="#">Messages</a>
+
+        <div class="links">
+          <span>Quick Link</span>
+          <a href="https://www.paypal.com/signin">Paypal</a>
+        </div>
+      </div>
+    </nav>
+
+  <div class="main">
+    <h2>MY ACCOUNT</h2>
+    <div class="card">
+        <div class="card-body">
+            <!-- <i class="fa fa-pen fa-xs edit"></i> -->
+            <table>
+                <tbody>
+                  <tr>
+                    <td>Profile Photo</td>
+                    <td>:</td>
+                    <td> {% if user.user_info.profile_pic %}
+                      <img src="{{ user.user_info.profile_pic.url }}" width="100px" height="100px" class="rounded-circle">
+                       {% else %}
+                        <img src="
+                        {% with 'images/default.jpg' as image %}
+                         {% static image %}
+                        {% endwith %}" width="100px" height="100px" class="rounded-circle" >
+                       {% endif %}</td>
+                  </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>&nbsp&nbsp{{ user.username }}</td>
+                    </tr>
+                    <tr>
+                      <td>First Name</td>
+                      <td>:</td>
+                      <td>&nbsp&nbsp{{ user.user_info.firstname }}</td>
+                    </tr>
+                    <tr>
+                      <td>Last Name</td>
+                      <td>:</td>
+                      <td>&nbsp&nbsp{{ user.user_info.lastname }}</td>
+                   </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td>&nbsp&nbsp{{ user.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>DOB</td>
+                        <td>:</td>
+                        <td>&nbsp&nbsp{{ user.user_info.dob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>:</td>
+                        <td>&nbsp&nbsp{{ user.user_info.gender}}</td>
+                    </tr>
+                    <tr>
+                      <td>Country</td>
+                      <td>:</td>
+                      <td>&nbsp&nbsp{{ user.user_info.country}}</td>
+                    </tr>
+                    <tr>
+                        <td>Qualification</td>
+                        <td>:</td>
+                        <td>&nbsp&nbsp{{ user.user_info.qualification}}</td>
+                    </tr>
+                    <tr>
+                        <td>Skill</td>
+                        <td>:</td>
+                        <td>&nbsp&nbsp{{ user.user_info.skills}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

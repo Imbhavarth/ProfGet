@@ -2,26 +2,29 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> YELLOW FAFDA </title>
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
-<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+<title> YELLOW FAFDA </title>
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{%static 'css/flexslider.css' %}">
+
+<link rel="stylesheet" href="{%static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{%static 'css/animate.min.css' %}" >
+<link rel="stylesheet" href="{%static 'css/main.css' %}">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="shortcut icon" type="image" href="static/images/logo/logo.png">
 </head>
 
 <body>
-{% block content %}
+
 <!-- Header Section -->
 <section class="tophead" role="tophead"> 
   <!-- Navigation Section -->
@@ -222,6 +225,82 @@
   </div>
 </section>
 <!-- Testimonials section --> 
+<hr>
+<!-- FAQ Section -->
+<div class="faq-header">Frequently Asked Questions</div>
+<div class="faq-content">
+  <div class="faq-question">
+    <input id="q1" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q1" class="panel-title">What is freelancing and how does it work?</label>
+    <div class="panel-content">Freelancing is a form of employment arrangement in which individual works for several       clients on a project-by-project basis rather than being hired by a single organisation. Freelancers are self-employed individuals who often work from home.</div>
+  </div>
+  
+  <div class="faq-question">
+    <input id="q2" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q2" class="panel-title">How do I become a freelancer?</label>
+    <div class="panel-content">To become a freelancer, you must have a talent or service to offer clients. To attract employment, you can build a profile on a freelancing website or platform, network with possible clients, and present yourself online.</div>
+  </div>
+  
+  <div class="faq-question">
+    <input id="q3" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q3" class="panel-title">How can I create an effective freelancing profile?</label>
+    <div class="panel-content">To build a successful freelancing profile, highlight your abilities and expertise, offer customer testimonials, and emphasise your unique selling features. Make sure your profile is full and up to date by using a professional profile photo.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q4" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q4" class="panel-title">How do I create a freelancing portfolio?</label>
+    <div class="panel-content">To create a freelancing portfolio, present your finest work and add samples that highlight your talents and expertise. To showcase your work, you may construct a website or use a portfolio platform.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q5" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q5" class="panel-title">As a freelancer, how do I manage my time?</label>
+    <div class="panel-content">You should make a timetable, prioritise your duties, avoid distractions, and utilise time management tools to manage your time as a freelancer.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q6" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q6" class="panel-title">How do I handle client expectations and communication?</label>
+    <div class="panel-content">To manage client communication and expectations, create clear expectations from the start of the project, contact your client frequently, and be sensitive to their demands.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q7" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q7" class="panel-title">How can I increase my freelancing skills?</label>
+    <div class="panel-content">Take seminars or attend workshops to strengthen your abilities as a freelancer, read industry blogs and books, network with other experts in your area, and get feedback from customers and co-workers.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q8" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q8" class="panel-title">What are the advantages of freelancing?</label>
+    <div class="panel-content">Flexibility, the option to pick your projects and clients, the chance to make a greater income, and the ability to work from home or anywhere with an internet connection are all advantages of freelancing.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q9" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q9" class="panel-title">What are some of the most typical problems that freelancers experience, and how can I overcome them?</label>
+    <div class="panel-content">Finding clients, managing cash flow, dealing with problematic clients, and successfully managing time are all common issues for freelancers. Be organised, keep focused on your goals, and seek help from other freelancers or experts as needed to solve these problems.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q10" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q10" class="panel-title">What kinds of services can be provided with freelancing apps?</label>
+    <div class="panel-content"> Freelancing apps may be used to provide a wide range of services such as writing, graphic design, web development, programming, social media management, translation, data entry, and more.</div>
+  </div>
+
+</div>
+<!-- FAQ Section -->
 
 <!-- footer section -->
 <footer id="contact" class="footer">
@@ -259,6 +338,5 @@
 <script src="{%static 'js/retina.min.js' %}"></script> 
 <script src="{%static 'js/modernizr.js' %}"></script> 
 <script src="{%static 'js/main.js' %}"></script>
-{% endblock %}
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 <head>
     {% load static %}
-  <title>SignUp</title>
+  <title>Edit Profile</title>
   <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
   <link rel="icon" href="images/logo/logo.png"/>
   <link href="{% static 'css/Signup_Job_Seeker.css' %}" rel="stylesheet">
@@ -13,13 +13,13 @@
 <body class="text-center">
   <main class="form-signin w-100 m-auto">
     <div class="container">
-        <h1 class="h3 mb-3 font">Sign Up</h1>
-        <p>Already Have an Account? <a href="{% url 'Login_app:login' %}"> Log In here</a></p>
+        <h1 class="h3 mb-3 font">Edit Profile</h1>
+        <!-- <p>Already Have an Account? <a href="{% static 'Login_app:login' %}"> Log In here</a></p> -->
           <form method="post" enctype="multipart/form-data">
-    {{ user_form.as_p }}
-    {{ user_info_form.as_p }}
+    {{ form.as_p }}
+    
     {% csrf_token %}
-    <p><input type="submit" value="Create my account"></p>
+    <p><input type="submit"></p>
         <!-- <div class="row">
           <div class="form-floating col-6">
             <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"

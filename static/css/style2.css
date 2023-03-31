@@ -167,6 +167,31 @@ table td{
 }
 
 
+.grid-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  /* display: grid; */
+  margin-top: 30px;
+  grid-template-columns: auto auto auto;
+  background-color: #bbcddb;
+  padding: 10px;
+ }
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+  text-align: left;
+  font-size: 10px;
+}
+.grid-container .grid-item {
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.grid-container .grid-item p{
+  font-weight: bold;
+}
+
 
 /* Sidebar Section */
 .sidebar{

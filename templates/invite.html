@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <title>Invitation</title>
+  <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="icon" href="images/logo/logo.png"/>
+  <link href="{% static 'css/Signup_Job_Seeker.css' %}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <div class="container">
+      <form method="post">
+        <h1 class="h3 mb-3 font">Invitation</h1>
+        {{form.as_p}}
+        {% csrf_token %}
+        <button onclick="myFunction()" class="w-100 btn  mt-3" type="submit">Send</a></button>
+        <button class="w-100 btn  mt-3" type="submit"><a href="{% url 'Login_app:dashboard_seeker' %}" >Cancel</a></button>
+      </form>
+    </div>
+  </main>
+
+<script>
+    function myFunction() {
+        alert("Your Invitation is send. Thank You");
+    }
+</script>
+</body>
+
+</html>
