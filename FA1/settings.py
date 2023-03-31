@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = BASE_DIR / 'static'
-MEDIA_DIR = BASE_DIR / 'media'
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,7 +27,8 @@ SECRET_KEY = 'django-insecure-r_ez^z$6p4rz5g&2zralzyl=k#3-1*sdy1sor!w11mwg3cm339
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
+
 
 
 # Application definition
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Login_app',
+    'Post_app',
 
     'django.contrib.sites',
 
@@ -46,11 +49,46 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
     'crispy_forms',
 ]
 
 SITE_ID = 1
 
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    },  
+        'facebook': {
+        'METHOD': 'oauth2',
+        # 'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        # 'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v7.0',
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -137,15 +175,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+   os.path.join(BASE_DIR, 'static'),
 ]
 
 # MEDIA_DIR
 
-MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 # Default primary key field type
@@ -158,4 +197,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #421385226544-ao17m6uo57lholhhteipg8nf6b95ap7r.apps.googleusercontent.com
 #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
 
-LOGIN_REDIRECT_URL = 'Login_app:dashboard'
+#724808222718339
+#f9115bd1f725cf5e2947709a3d8db7cd
+
+LOGIN_REDIRECT_URL = 'Login_app:dashboard_seeker'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# EMAIL_HOST = 'smpt.gmail.com'
+# EMAIL_PORT=587
+# EMAIL_HOST_USER = 'proget6@gmail.com'
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS=True
