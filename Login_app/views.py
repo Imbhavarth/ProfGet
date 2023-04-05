@@ -2,6 +2,7 @@ from django.shortcuts import render
 from Login_app.forms import UserForm,UserInfoForm,JobProviderInfoForm,EditProfile,InviteForm
 from Login_app.models import UserInfo,User
 from Post_app.forms import PostForm
+from Post_app.models import Post
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import  HttpResponse, HttpResponseRedirect
@@ -52,7 +53,13 @@ def user_logout(request):
 
 @login_required
 def dashboard_seeker(request):
-    return render(request,'authentification/dashboard_seeker.html')
+    posts = Post.objects.filter()
+
+    if request.method == 'GET':
+        search = request.GET.get('search','')
+        result = Post.objects.filter(project_name__icontains=search)
+
+    return render(request,'authentification/dashboard_seeker.html', context={'posts':posts, 'search':search, 'result':result})
 
 @login_required
 def dashboard_provider(request):
@@ -193,3 +200,12 @@ def jobproviderregister(request):
 
     dict = {'user_form':user_form, 'job_provider_info_form':job_provider_info_form}
     return render(request, 'authentification/jobproviderregister.html', context=dict)
+
+@login_required 
+def feedback(request):
+    users = User.objects.filter()
+
+    if request.method == 'GET':
+        search = request.GET.get('search','')
+        results = User.objects.filter(username__icontains=search)
+    return render(request, 'feedback_page.html', context={'users':users, 'search':search, 'results':results})
