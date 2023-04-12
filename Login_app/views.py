@@ -14,7 +14,7 @@ import ssl
 import smtplib
 
 email_sender = 'profget6@gmail.com'
-email_password = '**********'
+email_password = settings.EMAIL_PASS
 
 
 # Create your views here.
@@ -54,12 +54,18 @@ def user_logout(request):
 @login_required
 def dashboard_seeker(request):
     posts = Post.objects.filter()
+    current_user = UserInfo.objects.get(user=request.user)
+    user_skill = current_user.skills
+    user_skill_list = user_skill.split(',')
+    for skill in user_skill_list:
+        print(skill)
+        matching_skills = Post.objects.filter(project_requirement__icontains = skill)
 
     if request.method == 'GET':
         search = request.GET.get('search','')
         result = Post.objects.filter(project_name__icontains=search)
 
-    return render(request,'authentification/dashboard_seeker.html', context={'posts':posts, 'search':search, 'result':result})
+    return render(request,'authentification/dashboard_seeker.html', context={'posts':posts, 'search':search, 'result':result, 'matching_skills':matching_skills})
 
 @login_required
 def dashboard_provider(request):
@@ -72,6 +78,10 @@ def profile_seeker(request):
 @login_required
 def profile_provider(request):
     return render(request,'profile_provider.html')
+
+@login_required
+def chatbot(request):
+    return render(request,'chatbot.html')
 
 @login_required
 def post_project(request):
@@ -89,14 +99,17 @@ def post_project(request):
 def invite(request):
     form = InviteForm()
     if request.method == 'POST':
+        current_user = UserInfo.objects.get(user=request.user)
+        name = current_user.firstname
         email = request.POST.get('friend_email')
         email_receiver = email
         subject = "Invitation to join PROFGET by Yellow Fafda."
-        body = """
-        Hi, I am Kate, using Profget for freelancing to get projects. This is the most efficient website for freelancing.
-        Link:http://127.0.0.1:8000/
-        Thank You
-        """
+        body = f"""
+Hi, I am {name}, using Profget for freelancing to get projects. This is the most efficient website for freelancing.
+Link:http://127.0.0.1:8000/
+
+Thank You
+"""
 
         em = EmailMessage()
         em['From'] = email_sender
