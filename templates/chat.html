@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% load static %} 
+  <title>Freelancing | By Yellow Fafda</title>
+  <link rel="stylesheet" href="{%static 'css/style2.css' %}" >
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  <link rel="shortcut icon" type="image" href="static/images/logo/logo.png"/>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">PROF-GET | Freelancing Platform</a>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <h4>&nbsp;&nbsp;{{ user.username }}&nbsp;&nbsp;</h4>
+      <div class="account">
+        <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol-thumbnail.png" alt="">
+        <h4><a href="{% url 'Login_app:logout'%}">Logout</a></h4>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="#" class="active">Dashboard</a>
+        <a href="{% url 'Login_app:dashboard_seeker'%}">Switch as Job Seeker</a>
+        <a href="{% url 'Login_app:profile_provider'%}">My Account</a>
+        <a href="#">Chat</a>
+        <a href="{% url 'Login_app:feedback'%}">Give Feedback</a>
+
+        <div class="links">
+          <span>Quick Link</span>
+          <a href="https://www.paypal.com/signin">Paypal</a>
+        </div>
+      </div>
+    </nav>
+      
+    <div class="main-body">
+        <h2>Chat Room</h2> 
+        <div class="grid-container">
+          {%  for chat in chats.all %}
+            <div class="grid-item">
+              <br/><b>{{ chat.author }}: </b>
+                {{ chat.msg }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>{{chat.upload_date}}</i><br/>
+            </div>
+            {% endfor %}
+                <form method="post">
+                  <h3 class="h3 mb-3 font">Write Message</h3>
+                  {{form.as_p}}
+                  {% csrf_token %}
+                  <button class="btn btn-success" type="submit">Send</a></button>     
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

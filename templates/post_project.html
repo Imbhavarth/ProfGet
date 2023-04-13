@@ -16,33 +16,6 @@
         <h1 class="h3 mb-3 font">Post a New Project</h1>
         {{form.as_p}}
 
-        <!-- <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Project Title" autocomplete="off">
-          <label for="floatingPassword">Project Title</label>
-        </div>
-
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Price" autocomplete="off">
-          <label for="floatingPassword">Project Price</label>
-        </div>
-
-        <div class="form-floating">
-          <input type="file" class="form-control mb-2 " id="floatingInput" placeholder="name@example.com"
-            autocomplete="off">
-          <label for="floatingInput">Project File</label>
-        </div>
-
-        <div class="form-floating">
-          <input type="date" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
-            autocomplete="off">
-          <label for="floatingInput">Due Date</label>
-        </div>
-
-        <div class="form-floating">
-          <textarea type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com"
-            autocomplete="off"></textarea>
-          <label for="floatingInput">Project Description</label>
-        </div> -->
         {% csrf_token %}
         <button onclick="myFunction()" class="w-100 btn  mt-3" type="submit">Post Project</a></button>
         <button class="w-100 btn  mt-3" type="submit"><a href="{% url 'Login_app:dashboard_provider' %}" >Cancel</a></button>
