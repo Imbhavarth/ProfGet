@@ -4,8 +4,8 @@ This is a freelancing website for professionals.
 This is project created by Yellow Fafda Group of Concordia University.
 
 1. Jay Prajapati
-2. Kathan Prajapati
-3. Bhavarth Pandya
+2. Bhavarth Pandya
+3. Kathan Prajapati
 4. Miraj Patni
 5. Twinkal Christian
 6. Prachi shah
