@@ -18,3 +18,13 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-upload_date',]
+
+class Chat(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chat')
+
+    msg = models.CharField(max_length=150, null=True)
+
+    upload_date = models.DateTimeField(auto_now_add=True, blank=True)
+
+    class Meta:
+        ordering = ['upload_date',]
