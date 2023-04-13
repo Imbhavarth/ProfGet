@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from Login_app.forms import UserForm,UserInfoForm,JobProviderInfoForm,EditProfile,InviteForm
 from Login_app.models import UserInfo,User
-from Post_app.forms import PostForm
-from Post_app.models import Post
+from Post_app.forms import PostForm, ChatForm
+from Post_app.models import Post, Chat
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import  HttpResponse, HttpResponseRedirect
@@ -96,6 +96,19 @@ def post_project(request):
         return render(request,'post_project.html', context={'title':'Post Project','form':form})
 
 @login_required
+def chat(request):
+        chats = Chat.objects.filter()
+        form = ChatForm()
+        if request.method == 'POST':
+            form = ChatForm(request.POST)
+            if form.is_valid():
+                sms = form.save(commit=False)
+                sms.author = request.user
+                sms.save()
+                return HttpResponseRedirect(reverse('Login_app:chat'))
+        return render(request,'chat.html', context={'title':'Chat Room','form':form, 'chats':chats})
+
+@login_required
 def invite(request):
     form = InviteForm()
     if request.method == 'POST':
@@ -122,14 +135,6 @@ Thank You
         with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
             smtp.login(email_sender, email_password)
             smtp.sendmail(email_sender, email_receiver, em.as_string())
-
-        # subject='Invitation to join PROFGET by Yellow Fafda.'
-        # message='fvnejv'
-        # from_email=settings.EMAIL_HOST_USER
-        # recipient_list=[email]
-
-        # send_mail(subject,message,from_email,recipient_list,fail_silently=False)
-
         return HttpResponseRedirect(reverse('Login_app:dashboard_seeker'))
     return render(request,'invite.html', context={'title':'Invitation','form':form})
         
@@ -146,8 +151,6 @@ def edit_profile(request):
             form.save(commit=True)
             form = EditProfile(instance=current_user)
             return HttpResponseRedirect(reverse('Login_app:profile_seeker'))
-
-
     return render(request, 'edit_profile.html', context={'form':form})
         
         
@@ -198,10 +201,6 @@ def jobproviderregister(request):
 
             job_provider_info = job_provider_info_form.save(commit=False)
             job_provider_info.user =user
-
-            # if 'project_file' in request.FILES:
-            #     job_provider_info.project_file = request.FILES['project_file']
-
             job_provider_info.save()
 
             jpregistered = True

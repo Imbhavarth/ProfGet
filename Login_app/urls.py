@@ -20,6 +20,7 @@ urlpatterns = [
     path('invite/', views.invite, name='invite'),
     path('feedback/', views.feedback, name='feedback'),
     path('chatbot/', views.chatbot, name='chatbot'),
+    path('chat/', views.chat, name='chat'),
 
     
 ]
