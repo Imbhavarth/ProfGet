@@ -54,7 +54,8 @@ def user_logout(request):
 @login_required
 def dashboard_seeker(request):
     posts = Post.objects.filter()
-    current_user = UserInfo.objects.get(user=request.user)
+    if UserInfo.objects.get(user=request.user):
+        current_user = UserInfo.objects.get(user=request.user)
     user_skill = current_user.skills
     user_skill_list = user_skill.split(',')
     for skill in user_skill_list:
@@ -66,6 +67,16 @@ def dashboard_seeker(request):
         result = Post.objects.filter(project_name__icontains=search)
 
     return render(request,'authentification/dashboard_seeker.html', context={'posts':posts, 'search':search, 'result':result, 'matching_skills':matching_skills})
+
+@login_required
+def dashboard_seeker1(request):
+    posts = Post.objects.filter()
+
+    if request.method == 'GET':
+        search = request.GET.get('search','')
+        result = Post.objects.filter(project_name__icontains=search)
+
+    return render(request,'authentification/dashboard_seeker.html', context={'posts':posts, 'search':search, 'result':result})
 
 @login_required
 def dashboard_provider(request):

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% load static %} 
+  <title>Freelancing | By Yellow Fafda</title>
+  <link rel="stylesheet" href="{%static 'css/style2.css' %}" >
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  <link rel="shortcut icon" type="image" href="static/images/logo/logo.png"/>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">PROF-GET | Freelancing Platform</a>
+      <div class="search_box">
+        <form class="form-inline", method="GET">
+          <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+          {% csrf_token %}
+          <button class="btn btn-success" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <h4>&nbsp;&nbsp;{{ user.username }}&nbsp;&nbsp;</h4>
+      <div class="account">
+        <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol-thumbnail.png" alt="">
+        <h4><a href="{% url 'Login_app:logout'%}">Logout</a></h4>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="#" class="active">Dashboard</a>
+        <a href="{% url 'Login_app:dashboard_provider'%}">Switch as Job Provider</a>
+        <a href="{% url 'Login_app:edit_profile'%}">Edit Profile</a>
+        <a href="{% url 'Login_app:profile_seeker'%}">My Account</a>
+        <a href="{% url 'Login_app:chatbot'%}">Chat-Bot</a>
+        <a href="{% url 'Login_app:chat'%}">Chat</a>
+        <a href="{% url 'Login_app:invite'%}">Invite a Friend</a>
+
+        <div class="links">
+          <span>Quick Link</span>
+          <a href="https://www.paypal.com/signin">Paypal</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <h2>Dashboard</h2>
+      <div class="promo_card">
+        <h1>Welcome to Prof-Get Freelancing</h1>
+        <span>"Technology is best when it brings people together"</span>
+        <button>Learn More</button>
+      </div>
+
+      {% if search %}
+
+      <div class="grid-container">
+      {% for post in result %}
+      <div class="grid-item">
+        <br/><p>Project Title : {{ post.project_name }}</p><br/>
+          Project Price : {{ post.project_rate }}<br/><br/>
+          Project Requirements : {{ post.project_requirement  }}<br/><br/>
+          Project Descriptions : {{ post.project_description }}<br/><br/>
+          Project Upload date : {{ post.upload_date }}<br/><br/>
+          Post by : {{ post.author }}<br/><br/>
+      </div>
+      {% endfor %}
+    </div>
+      {% else %}
+      <h2>Most Relavent to your Profile</h2>
+      <div class="grid-container">
+          <div class="grid-item">
+          </div>
+        </div>
+        <h2>All Job Posts</h2>
+      <div class="grid-container">
+        {%  for post in posts %}
+          <div class="grid-item">
+            <br/><p>Project Title : {{ post.project_name }}</p><br/>
+              Project Price : {{ post.project_rate }}<br/><br/>
+              Project Requirements : {{ post.project_requirement  }}<br/><br/>
+              Project Descriptions : {{ post.project_description }}<br/><br/>
+              Project Upload date : {{ post.upload_date }}<br/><br/>
+              Post by : {{ post.author }}<br/><br/>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="sidebar">
+      <h4>Account Balance</h4>
+      
+
+      <div class="balance">
+        <i class="fa-solid fa-indian-rupee-sign icon"></i>
+        <div class="info">
+          <h5>INR</h5>
+          <span><i class="fa-solid fa-indian-rupee-sign"></i>220,000.00</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

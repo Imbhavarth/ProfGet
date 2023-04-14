@@ -11,6 +11,7 @@ urlpatterns = [
     path('option/', views.option, name='option'),
     path('logout/', views.user_logout, name='logout'),
     path('dashboard_seeker/', views.dashboard_seeker, name='dashboard_seeker'),
+    path('dashboard_seeker1/', views.dashboard_seeker1, name='dashboard_seeker1'),
     path('dashboard_provider/', views.dashboard_provider, name='dashboard_provider'),
     path('user_loged/', views.user_loged, name='user_loged'),
     path('profile_seeker/', views.profile_seeker, name='profile_seeker'),

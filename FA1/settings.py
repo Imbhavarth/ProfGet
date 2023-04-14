@@ -197,18 +197,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-#421385226544-ao17m6uo57lholhhteipg8nf6b95ap7r.apps.googleusercontent.com
-#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
 
-#724808222718339
-#f9115bd1f725cf5e2947709a3d8db7cd
+LOGIN_REDIRECT_URL = 'Login_app:dashboard_seeker1'
 
-LOGIN_REDIRECT_URL = 'Login_app:dashboard_seeker'
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# EMAIL_HOST = 'smpt.gmail.com'
-# EMAIL_PORT=587
-# EMAIL_HOST_USER = 'proget6@gmail.com'
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS=True
